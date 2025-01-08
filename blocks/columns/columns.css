@@ -1,29 +1,33 @@
-/* Countdown Section Styles */
-
-.countdown-container {
-  position: relative;
-  text-align: center;
-  background-size: cover;
-  height: 721px;
+.columns > div {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 70px 10px;
 }
 
-.date {
-  text-align: left;
-  font: normal normal normal 30px/57px "FS Albert", sans-serif;
-  letter-spacing: -0.27px;
-  color: #fff;
-  opacity: 1;
-  padding-top: 20px;
-  margin-top: 20px;
+.columns img {
+  width: 100%;
 }
 
-.countdown-content {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  flex-wrap: wrap;
+.columns > div > div {
+  order: 1;
+}
+
+.columns > div > .columns-img-col {
+  order: 0;
+}
+
+.columns > div > .columns-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns > div > div {
+    flex: 1;
+    order: unset;
+  }
 }

@@ -1,0 +1,29 @@
+/* Countdown Section Styles */
+
+.countdown-container {
+  position: relative;
+  text-align: center;
+  background-size: cover;
+  height: 721px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 10px;
+}
+
+.date {
+  text-align: left;
+  font: normal normal normal 30px/57px "FS Albert", sans-serif;
+  letter-spacing: -0.27px;
+  color: #fff;
+  opacity: 1;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.countdown-content {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
