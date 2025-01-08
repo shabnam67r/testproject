@@ -1,33 +1,284 @@
-.columns > div {
+/* Countdown Section Styles */
+.countdown-container {
+  position: relative;
+  text-align: center;
+  /* background: transparent url("../../assets/images/bg.svg") 0% 0% no-repeat padding-box; */
+  background-size: cover;
+  height: 721px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding: 70px 10px;
 }
 
-.columns img {
+.date {
+  font-size: 18px;
+  font-weight: normal;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.countdown-content {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+}
+
+.countdown-text-content {
+  margin: 0 0 0 70px;
+}
+
+.countdown-first-title {
+  text-align: left;
+  font: normal normal bold 21px/37px FS Albert;
+  letter-spacing: 0px;
+  color: #042164;
+  opacity: 1;
+}
+
+.countdown-title {
+  text-align: left;
+  font: italic normal bold 40px/45px FS Albert;
+  letter-spacing: -0.36px;
+  color: #ffffff;
+  opacity: 1;
+  top: 257px;
+  left: 210px;
+  width: 846px;
+}
+
+.countdown-description {
+  text-align: left;
+  font: normal normal bold 36px/43px FS Albert;
+  letter-spacing: 0px;
+  color: #232b76;
+  opacity: 1;
+  width: 711px;
+  height: 84px;
+}
+
+#timer {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+}
+
+.date {
+  text-align: left;
+  font: normal normal normal 30px/57px FS Albert;
+  letter-spacing: -0.27px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* Buttons */
+.countdown-buttons {
+  width: 50%;
+
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.login-btn,
+.register-btn {
+  display: inline-block;
+  background-size: contain; /* Ensure the image fits within the button */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 335px;
+  height: 60px;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  transform: scale(1.05); /* Slight zoom on hover for better UX */
+}
+.login-btn,
+.register-btn {
+  background: transparent url("../../assets/images/login.svg") 0% 0% no-repeat padding-box;
+}
+
+.register-btn {
+  background: transparent url("/assets/images/register.svg") 0% 0% no-repeat
+    padding-box;
+}
+
+.countdown-timer {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.time-unit span {
+  text-align: center;
+  font: normal normal normal 19px/55px FS Albert;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.time-unit {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 85px;
+  height: 94px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.time-unit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: #232b76;
+  opacity: 0.3;
+  z-index: 1;
 }
 
-.columns > div > div {
-  order: 1;
+.square {
+  position: relative;
+  z-index: 2;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  opacity: 1;
 }
 
-.columns > div > .columns-img-col {
-  order: 0;
-}
-
-.columns > div > .columns-img-col img {
-  display: block;
-}
-
-@media (width >= 900px) {
-  .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  #countdown {
+    height: auto; /* Adjust height for mobile */
+    padding: 20px;
   }
 
-  .columns > div > div {
-    flex: 1;
-    order: unset;
+  .countdown-text-content {
+    margin: 20px 0;
+  }
+
+  .countdown-title {
+    font-size: 24px; /* Smaller font size for mobile */
+    width: auto; /* Ensure the text fits the screen */
+  }
+
+  .countdown-description {
+    font-size: 20px; /* Smaller font size for mobile */
+    width: auto;
+  }
+
+  #timer {
+    font-size: 18px; /* Smaller timer font */
+  }
+
+  .time-unit {
+    width: 60px; /* Smaller units on mobile */
+    height: 70px;
+  }
+  .time-unit span {
+    font-size: 14px;
+    display: flex;
+    height: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .square {
+    font-size: 18px; /* Smaller numbers */
+    display: flex;
+    height: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .countdown-buttons {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: start;
+  }
+
+  .login-btn,
+  .register-btn {
+    background-size: contain;
+    width: 250px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 376px) {
+  .date {
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .countdown-buttons {
+    margin-left: 70px;
+  }
+}
+/* Desktop Styles */
+@media screen and (min-width: 769px) {
+  .countdown-content {
+    flex-direction: row;
+    justify-content: space-between;
+    /* margin: 30px 70px; */
+  }
+
+  .countdown-text-content {
+    margin-left: 70px;
+    width: 60%;
+  }
+
+  .countdown-title {
+    font-size: 40px;
+    width: 846px;
+  }
+
+  .countdown-description {
+    font-size: 36px;
+    width: 711px;
+  }
+
+  #timer {
+    font-size: 28px;
+  }
+
+  .time-unit {
+    width: 85px;
+    height: 94px;
+  }
+
+  .square {
+    font-size: 24px;
+  }
+
+  .countdown-buttons {
+    flex-direction: column;
+    align-items: center;
+
+    align-items: flex-start;
+    margin-left: 70px;
+    width: 30%;
+  }
+
+  .login-btn,
+  .register-btn {
+    width: 335px;
+    height: 60px;
   }
 }

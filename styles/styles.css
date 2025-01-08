@@ -10,14 +10,14 @@
  * governing permissions and limitations under the License.
  */
 
-:root {
+ :root {
   /* colors */
   --background-color: white;
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --link-color: #232B76;
+  --link-hover-color: #232B76;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -162,7 +162,7 @@ a:any-link {
 
 a:hover {
   color: var(--link-hover-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* buttons */
@@ -226,7 +226,9 @@ main img {
   height: 100%;
   width: 100%;
 }
-
+main{
+  margin-top: 90px;
+}
 /* sections */
 main > .section {
   margin: 40px 0;
@@ -240,6 +242,7 @@ main > .section > div {
 
 main > .section:first-of-type {
   margin-top: 0;
+  background: transparent url("../../assets/images/bg.svg") 0% 0% no-repeat padding-box;
 }
 
 @media (width >= 900px) {
