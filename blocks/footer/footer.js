@@ -32,4 +32,3 @@ export default async function decorate(block) {
   // Append the footer to the block
   block.appendChild(footer);
 }
-

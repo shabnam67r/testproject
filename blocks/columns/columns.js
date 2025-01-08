@@ -40,7 +40,12 @@ export default function decorate(block) {
   // Utility function for formatted date
   function getFormattedDate() {
     const now = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
     return now.toLocaleDateString(undefined, options);
   }
 
@@ -58,29 +63,35 @@ export default function decorate(block) {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    return { days, hours, minutes, seconds, ended: false };
+    return {
+      days,
+      hours,
+      minutes,
+      seconds,
+      ended: false,
+    };
   }
 
   // Display the current date
-  const dateContainer = block.querySelector("#date-container");
+  const dateContainer = block.querySelector('#date-container');
   dateContainer.innerText = getFormattedDate();
 
   // Countdown timer setup
-  const targetDate = new Date("2025-01-15T24:00:00").getTime();
+  const targetDate = new Date('2025-01-15T24:00:00').getTime();
 
   // Function to update the countdown and display it
   function updateCountdownDisplay() {
     const result = updateCountdown(targetDate);
 
     if (result.ended) {
-      block.querySelector("#timer").innerHTML = "<p>Countdown Ended!</p>";
+      block.querySelector('#timer').innerHTML = '<p>Countdown Ended!</p>';
       return;
     }
 
-    block.querySelector("#days").innerText = result.days;
-    block.querySelector("#hours").innerText = result.hours;
-    block.querySelector("#minutes").innerText = result.minutes;
-    block.querySelector("#seconds").innerText = result.seconds;
+    block.querySelector('#days').innerText = result.days;
+    block.querySelector('#hours').innerText = result.hours;
+    block.querySelector('#minutes').innerText = result.minutes;
+    block.querySelector('#seconds').innerText = result.seconds;
   }
 
   // Update countdown every second

@@ -8,24 +8,23 @@ header {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
+  background: #fff 0 0 no-repeat padding-box;
 }
-.logo{
-  margin: 0 70px
+
+.logo {
+  margin: 0 70px;
 }
 
 /* Logo Styling */
 #header-logo {
-  height: 35.31px; /* Adjust the height of the logo */
-  width: 142.53px; /* Maintain the aspect ratio of the logo */
+  height: 35.31px;
+  width: 142.53px;
 }
 
 /* Hamburger Menu (Visible on Mobile Only) */
 #hamburger-menu {
-  display: none; /* Hidden by default */
+  display: none;
   font-size: 30px;
   background: none;
   border: none;
@@ -47,8 +46,8 @@ nav ul li {
 
 nav ul li a {
   text-align: left;
-  font: normal normal bold 14px/37px FS Albert;
-  letter-spacing: 0px;
+  font: normal normal bold 14px/37px 'FS Albert', sans-serif;
+  letter-spacing: 0;
   color: #232B76;
   opacity: 1;
   text-decoration: none;
@@ -59,7 +58,7 @@ nav ul li a:hover {
 }
 
 /* Mobile Styles */
-@media screen and (max-width: 1024px) {
+@media screen and (width <=  1024px) {
   header {
     padding: 15px;
     justify-content: space-between;
@@ -67,13 +66,13 @@ nav ul li a:hover {
 
   /* Adjust logo size for mobile */
   #header-logo {
-    height: 25px; /* Smaller logo for mobile */
+    height: 25px;
     width: auto;
   }
 
   /* Hamburger Menu Button */
   #hamburger-menu {
-    display: block; /* Show hamburger button on mobile */
+    display: block;
     justify-content: end;
     right: 0;
     position: absolute;
@@ -83,16 +82,14 @@ nav ul li a:hover {
   /* Hide navigation links on mobile by default */
   nav ul {
     display: none;
-    flex-direction: column; /* Stack the menu items vertically */
+    flex-direction: column;
     gap: 10px;
     position: absolute;
     top: 60px;
     right: 20px;
     background-color: white;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 5px;
-  
   }
 
   /* Show navigation links when menu is open */
